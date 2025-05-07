@@ -1,23 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LinkClickLandingPage from "./LinkClickLandingPage";
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup'; // ✅ Import Signup
+import Home from './components/Home/Home';
+import GovernmentServices from './components/GovernmentServices/GovernmentServices';
+import Tutorials from './components/Tutorials/Tutorials';
+import Reminders from './components/Reminders/Reminders';
+import Services from './components/Services/Services';
 
-function Placeholder({ title }) {
-  return <div className="p-10 text-xl font-bold">{title} Page Coming Soon...</div>;
-}
-
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LinkClickLandingPage />} />
-        <Route path="/government-services" element={<Placeholder title="Government Services" />} />
-        <Route path="/tutorials" element={<Placeholder title="Tutorials" />} />
-        <Route path="/reminders" element={<Placeholder title="Reminders" />} />
-        <Route path="/easy-online-services" element={<Placeholder title="Easy Online Services" />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> {/* ✅ New Signup route */}
+        <Route path="/home" element={<Home />} />
+        <Route path="/government-services" element={<GovernmentServices />} />
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/reminders" element={<Reminders />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
+
