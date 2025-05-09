@@ -1,55 +1,68 @@
-// src/components/Home/Home.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
+import React from "react";
+import { Helmet } from "react-helmet";
+import "../../App.css";
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <header className="header">
-        <h1 className="logo">LinkClick</h1>
-        <p className="tagline">simple. secure. for everyone.</p>
-      </header>
-
-      <section className="introduction">
+    <div>
+      <Helmet>
+        <title>LinkClick - Home</title>
+      </Helmet>
+      <section className="why-linkclick">
         <h2>Why LinkClick?</h2>
-        <span className="arrow-down">↓</span>
+        <div className="arrow-container">
+          <img src="path-to-down-arrow-icon.png" alt="down-arrow" className="down-arrow" />
+        </div>
+        <div className="video-container">
+          <video width="100%" height="auto" controls>
+            <source src="/videos/your-video-file.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
-      <div className="services-section">
-        <Link to="/government-services" className="service-card">
-          <p className="service-title">Government Services</p>
-          <img
-            src="https://files.oaiusercontent.com/file-5ZwsCAQ5nT1yqzywFxGBd3?se=2025-05-07T16%3A23%3A01Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D019ee379-e5ce-438d-a840-8a821bde025e.png&sig=yblFCE1pJn8o%2Bw3IfkNJJwax2WF1IknWEtQR6YR/jV8%3D"
-            alt="Government Services"
-          />
-        </Link>
+      <section className="features">
+        <div className="feature">
+          <img src="blob:https://web.whatsapp.com/97a9a8f5-6877-4019-b6a0-7723c94170cd" alt="tutorial" />
+          <h3>Tutorials</h3>
+          <p>You've never made a website this fast before.</p>
+          <button>Read More</button>
+        </div>
 
-        <Link to="/tutorials" className="service-card">
-          <p className="service-title">Tutorials</p>
-          <img
-            src="https://api.deepai.org/job-view-file/8eacadae-05fe-4f96-9602-c5413b27b06e/outputs/output.jpg"
-            alt="Tutorials"
-          />
-        </Link>
+        <div className="feature">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTti7v_vXcKPIykyOz7C-49pneI2IIcFTWO6vYNEs1g7txOKBWTIw6Fsp2_E7p98q2A1s&usqp=CAU" alt="services" />
+          <h3>Services</h3>
+          <p>Image</p>
+        </div>
 
-        <Link to="/reminders" className="service-card">
-          <p className="service-title">Reminders</p>
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/021/254/827/non_2x/reminder-3d-render-mobile-phone-in-hand-with-notification-bell-button-and-floating-elements-on-purple-png.png"
-            alt="Reminders"
-          />
-        </Link>
+        <div className="feature">
+          <img src="https://static.vecteezy.com/system/resources/previews/021/254/827/non_2x/reminder-3d-render-mobile-phone-in-hand-with-notification-bell-button-and-floating-elements-on-purple-png.png" alt="notifications" />
+          <h3>Notifications & Reminders</h3>
+        </div>
+      </section>
 
-        {/* ✅ New Services Link */}
-        <Link to="/services" className="service-card">
-          <p className="service-title">Services</p>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTti7v_vXcKPIykyOz7C-49pneI2IIcFTWO6vYNEs1g7txOKBWTIw6Fsp2_E7p98q2A1s&usqp=CAU"
-            alt="Services"
-          />
-        </Link>
-      </div>
+      <section className="about-us">
+        <h2>About Us</h2>
+        <p>
+          LinkClick is a simple, senior-friendly digital support platform designed to simplify and centralize access to online services. It includes pictorial step-by-step tutorials on using WhatsApp, cable booking, Netflix, mobile recharge, and more.
+        </p>
+      </section>
+
+      <section className="faq">
+        <h2>FAQ</h2>
+        <div className="faq-item">
+          <button>What is LinkClick?</button>
+          <p>LinkClick is a digital support platform...</p>
+        </div>
+        <div className="faq-item">
+          <button>Who can use LinkClick?</button>
+          <p>Anyone who needs assistance...</p>
+        </div>
+        <div className="faq-item">
+          <button>What kind of tutorials are available on LinkClick?</button>
+          <p>We have tutorials for WhatsApp, Netflix...</p>
+        </div>
+      </section>
     </div>
   );
 };
